@@ -1,0 +1,149 @@
+.ph-top-menu li:hover a {
+
+    color: #ed1c24 !important;
+
+}
+.shared-main-navigation--desktop ul li a {
+
+    text-transform: uppercase;
+    color: #FFF;
+
+}
+.shared-main-navigation--desktop ul li a {
+
+    line-height: 3;
+
+}
+.ph-top-menu > li a {
+
+    line-height: 2 !important;*::-moz-selection {
+
+    background: rgba(0,0,0,.5);
+    color: #fff;
+
+}
+element {
+
+}
+.ph-top-menu li.active .fa-pizza, .ph-top-menu li:hover .fa-pizza {
+
+    background: url(https://static.phd.co.id/icons/categoryicons/redpizza.png) center center no-repeat rgba(0,0,0,0);
+
+}
+.fa-pizza {
+
+    background: url(https://static.phd.co.id/icons/categoryicons/pizza.png) center center no-repeat rgba(0,0,0,0);
+
+}
+.fa-phtm {
+
+    margin: 0 auto;
+    height: 47px;
+
+}
+.fa-phtm, .selectric-open .selectric-items {
+
+    display: block;
+
+}
+.fa {
+
+    font: normal normal normal 14px/1 FontAwesome;
+        font-size: 14px;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    transform: translate(0,0);
+
+}
+.fa, .fa-stack {
+
+    display: inline-block;
+
+}
+.fa {
+
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+*, *::after, *::before {
+
+    box-sizing: inherit;
+
+}
+.shared-main-navigation--desktop ul li a:hover {
+
+    color: #ed1c
+    color: #FFF;
+    letter-spacing: 0;
+
+}
+.ph-nav-footer h5, .ph-top-menu > li a {
+
+    font-family: Roboto;
+    font-weight: 400;
+
+}
+a, a:active, a:focus, a:hover {
+
+    cursor: pointer;
+
+}
+a, a:active, a:focus, a:hover {
+
+    color: #fdd75f;
+
+}
+.shared-main-navigation--desktop ul li {
+
+    font-size: 18px;
+    font-size: 1.28571rem;
+    line-height: 1.11111;
+
+}
+.shared-main-navigation--desktop ul li {
+
+    font-size: 16px;
+    font-size: 1.14286rem;
+    line-height: 1.25;
+
+}
+.shared-main-navigation--desktop ul li {
+
+    font-size: 14px;
+    font-size: 1rem;
+    line-height: 1.42857;
+    text-align: center;
+    font-weight: 600;
+
+}
+.account-register-from .accordion__title, .cta, .cta-btn, .cta-btn--arrow, .shared-main-navigation--desktop ul li {
+
+    font-family: Roboto;
+
+}
+.list-full, .list-inline, .list-ui {
+
+    list-style: none;
+
+}
+html {
+
+    color: #fff;
+    font-family: Roboto,sans-serif;
+
+}
+html {
+
+    font-size: .875em;
+    line-height: 1.42857;
+
+}
