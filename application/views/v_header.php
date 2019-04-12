@@ -28,8 +28,17 @@
                       <a href="#" style="color: white;">En</a>
                     </li>
                     <li>
-                      <a href="" style="color: white; padding-right: 10px;"><i class="fas fa-user" style="color: yellow"></i> masuk</a>
-                      <a href="<?= base_url() ?>index.php/Home/register" style="color: white;"><i class="fas fa-user" style="color: yellow"></i> daftar</a>
+                      <?php if ($this->session->userdata("status") != "login") {?>
+                        <a href="<?= base_url(); ?>index.php/Home/aksi_login" style="color: white; padding-right: 10px;"><i class="fas fa-user" style="color: yellow"></i> masuk</a>
+                        <a href="<?= base_url() ?>index.php/Home/register" style="color: white;"><i class="fas fa-user" style="color: yellow"></i> daftar</a>
+                      <?php } else{ ?>
+                        <a href="<?= base_url(); ?>index.php/Home/aksi_login" style="color: white; padding-right: 10px;"><i class="fas fa-user" style="color: yellow"></i> <a href="<?= base_url() ?>index.php/Home/edituser" style="color: white">Hai, <?php echo $this->session->userdata("nama"); ?></a></a>
+                        <a href="<?= base_url(); ?>index.php/Home/logout" style="color: white; padding-right: 10px;"><i class="fas fa-user" style="color: yellow"></i> log out</a>
+                      <?php } ?>
+                      
+                    </li>
+                    <li>
+                      <a href="<?= base_url(); ?>index.php/admin" style="color: white; padding-right: 10px;"><i class="fas fa-user" style="color: yellow"></i> admin</a>
                     </li>               
                 </ul>
               <div class="col-md-5"><img src="https://static.phd.co.id/PHD_Logo2019v2.png" alt="Pizza Hut" width="80%"></div>
@@ -44,7 +53,7 @@
           <div class="row">
              <ul class="list-inline text-center logo" class="bg">
                           <li>
-                            <a class="yellow" href="#">
+                            <a class="yellow" href="<?= base_url() ?>index.php/Home">
                                 <i class="fas fa-pizza-slice text-navbar"></i>
                                 <br>
                                 HOT PROMO

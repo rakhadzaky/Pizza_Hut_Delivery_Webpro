@@ -1,6 +1,6 @@
 
                 <section class="carousel">
-                  <div class="container">x;
+                  <div class="container">
                   <div id="demo" class="carousel slide pt-2 rounded" data-ride="carousel">
 
                   
