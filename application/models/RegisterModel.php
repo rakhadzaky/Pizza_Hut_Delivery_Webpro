@@ -20,13 +20,20 @@ class RegisterModel extends CI_model
 
 	public function getAllUser()
 	{
-		//use query builder to get data table "user"
+		
 		$this->db->select('*');
         $this->db->from('tbuser');
 		$query=$this->db->get();
 		
 		return $query->result_array();
 		
+	}
+
+	function get_akun($email)
+	{
+		$this->db->where('email',$email);
+		$query = $this->db->get('tbuser')->row_array();
+		return $query;
 	}
 
 	public function cariDataUser()
@@ -45,10 +52,10 @@ class RegisterModel extends CI_model
 		//return data mahasiswa that has been searched
 	}
 
-	public function hapusDataUser($first_name)
+	public function hapusDataUser($email)
 	{
 		//use query builder to delete data based on id 
-		$this->db->where('first_name', $first_name);
+		$this->db->where('email', $email);
 		$this->db->delete('tbuser');
 	}
 
@@ -57,27 +64,20 @@ class RegisterModel extends CI_model
 	}
 
 		
-	public function getUserByEmail($first_name)
+	public function getUserByEmail($email)
 	{
 		
 		return $this->db->get_where('tbuser', ['email' => $email])->row_array();
 
 	}
 
-	public function ubahDataUser($first_name)
-	{
-		$data = [
-			"first_name" => $this->input->post('firstName', true),
-			"last_name" => $this->input->post('lastName', true),
-			"gender" => $this->input->post('jk', true),
-            "phone" => $this->input->post('phone', true),
-            "birth" => $this->input->post('day', true) . "-" . $this->input->post('month', true) . "-" . $this->input->post('year', true),
-            "email" => $this->input->post('email', true),
-            "password" => md5($this->input->post('password', true)),
-		];
-		//use query builder class to update data mahasiswa based on id
-		$this->db->where('first_name', $first_name);
-		return $this->db->update('tbuser', $data);
+	public function ubahDataUser($email,$user)
+	{		
+		$this->db->where('email', $email);
+		$this->db->update('tbuser', $user);
+		$this->session->set_userdata($user);
+
+
 	}
 
 	

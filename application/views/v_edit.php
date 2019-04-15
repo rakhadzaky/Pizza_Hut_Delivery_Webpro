@@ -16,23 +16,95 @@
                         ?></li>
                         </ul>
                     </div>
+
                     <div class="row">
-                        <form action="<?= base_url() ?>index.php/Home/register/<?=  ?>" class="col-md-8" method="post">
-                          <div class="form-row col-md-12"> 
+                        <form action="<?= base_url() ?>index.php/Home/edituser" class="col-md-8" method="post">
+                                                    <div class="form-row col-md-12"> 
+                            <div class="col-md-9">
+                                  <label for="inputName" style="color: white">Nama lengkap</label>
+                                  <input type="text" class="form-control" placeholder="First name" name="firstName" value="<?php echo $tbuser['first_name'] ?>">
+                                  <small class="form-text text-danger"><?= form_error('firstName') ?>.</small>
+                                  <input type="text" class="form-control" placeholder="Last name" name="lastName" value="<?php echo $tbuser['last_name'] ?>">">
+                                  <small class="form-text text-danger"><?= form_error('lastName') ?>.</small>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                              <label for="inputState" style="color: white">Jenis Kelamin</label>
+                              <select id="inputState" class="form-control" name="jk">
+                                <option selected disabled>Choose...</option>
+                                <option value="Pria">Pria</option>
+                                <option value="Wanita">Wanita</option>
+                              </select>
+                              <small class="form-text text-danger"><?= form_error('jk') ?>.</small>
+                            </div>
+                            <div class="col-md-8"></div>
+                            <div class="form-group col-md-5">
+                              <label style="color: white">No. Telepon <em class="required" aria-required="true">*</em></label>
+                                <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                                  <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                      <div class="input-group-text">+62</div>
+                                    </div>
+                                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="85141" name="phone" value="<?php echo $tbuser['phone'] ?>">
+                                  </div>
+                                  <small class="form-text text-danger"><?= form_error('phone') ?>.</small>
+                            </div>
+                            <div class="col-md-5"></div>
+
+                            <div class="form-group col-md-3">
+                              <label for="inputCity" style="color: white">Tanggal</label>
+                                  <select id="inputState" class="form-control" name="day">
+                                    <option selected>Choose...</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                  </select>
+                                  <small class="form-text text-danger"><?= form_error('day') ?>.</small>
+                              </div>
+
+                              <div class="form-group col-md-3">
+                              <label for="inputCity" style="color: white">Bulan</label>
+                                  <select id="inputState" class="form-control" name="month">
+                                    <option selected>Choose...</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                    <small class="form-text text-danger"><?= form_error('month') ?>.</small>
+                                  </select>
+                              </div>
+
+                              <div class="form-group col-md-3">
+                              <label for="inputCity" style="color: white">Tahun</label>
+                                  <select id="inputState" class="form-control" name="year">
+                                    <option selected>Choose...</option>
+                                    <option value="2000">2000</option>
+                                    <option value="2001">2001</option>
+                                    <option value="2002">2002</option>
+                                  </select>
+                                  <small class="form-text text-danger"><?= form_error('year') ?>.</small>
+                              </div>
                               <div class="col-md-3"></div>
                               <div class="row">
-                                <div class="form-group col-md-12">
-                                  <label for="email" style="color: white">Email address:</label>
-                                  <input name="email" type="email" class="form-control" id="email">
-                                  <small class="form-text text-danger"><?= form_error('email') ?></small>
-                                </div>
-                                <div class="col-md-8"></div>
-                                <div class="form-group col-md-8">
-                                  <label for="pwd" style="color: white">Password:</label>
-                                  <input name="password" type="password" class="form-control" id="pwd">
-                                  <small class="form-text text-danger"><?= form_error('password') ?></small>
-                                </div>
-                            <div class="col-md-6"><button type="submit" class="btn btn-primary">Submit</button></div> 
+                            <div class="form-group col-md-12">
+                              <label for="email" style="color: white">Email address:</label>
+                              <input name="email" type="email" class="form-control" id="email" value="<?php echo $tbuser['email'] ?>"><br>
+                            </div>
+                            <div class="col-md-8"></div>
+                            <div class="form-group col-md-8">
+                              <label for="pwd" style="color: white">Password:</label>
+                              <input name="password" type="password" class="form-control" id="pwd">
+                              <small class="form-text text-danger"><?= form_error('password') ?>.</small>
+                            </div>
+                            <div class="col-md-8"></div>
+                            <div class="form-group form-check">
+                              <label class="form-check-label">
+                                <input class="form-check-input " type="checkbox" style="color: white"><span class="small-text col-md-6" style="color: white">
+                                                  Saya setuju dengan <a href="https://www.phd.co.id/id/home/term" target="_blank" style="color: white">syarat</a>
+                                                  dan mengerti bahwa informasi saya akan <br> digunakan sebagai penjelasalan dalam halaman ini dan <a href="https://www.phd.co.id/id/home/privacy" target="_blank" style="color: white">kebijakan privasi</a>
+                                              </span> Pizza Hut
+                              </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                           </div>                  
                         </form>

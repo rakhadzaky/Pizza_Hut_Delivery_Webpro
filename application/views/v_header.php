@@ -32,7 +32,7 @@
                         <a href="<?= base_url(); ?>index.php/Home/aksi_login" style="color: white; padding-right: 10px;"><i class="fas fa-user" style="color: yellow"></i> masuk</a>
                         <a href="<?= base_url() ?>index.php/Home/register" style="color: white;"><i class="fas fa-user" style="color: yellow"></i> daftar</a>
                       <?php } else{ ?>
-                        <a href="<?= base_url(); ?>index.php/Home/aksi_login" style="color: white; padding-right: 10px;"><i class="fas fa-user" style="color: yellow"></i> <a href="<?= base_url() ?>index.php/Home/edituser" style="color: white">Hai, <?php echo $this->session->userdata("nama"); ?></a></a>
+                        <a href="<?= base_url(); ?>index.php/Home/aksi_login" style="color: white; padding-right: 10px;"><i class="fas fa-user" style="color: yellow"></i> <a href="<?= base_url() ?>index.php/Home/lihat_detail" style="color: white">Hai, <?php echo $this->session->userdata("first_name"); ?></a></a>
                         <a href="<?= base_url(); ?>index.php/Home/logout" style="color: white; padding-right: 10px;"><i class="fas fa-user" style="color: yellow"></i> log out</a>
                       <?php } ?>
                       
