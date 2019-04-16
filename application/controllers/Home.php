@@ -3,6 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends CI_Controller {
 
+	public $date = array('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31');
+	public $month = array('1','2','3','4','5','6','7','8','9','10','11','12');
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -105,7 +108,9 @@ class Home extends CI_Controller {
 
 	public function lihat_detail(){
 		$data['tbuser'] = $this->RegisterModel->get_akun($this->session->userdata("email"));
-		$this->load->view('v_header');		
+		$data['date'] = $this->date;
+		$data['month'] = $this->month;
+		$this->load->view('v_header');
 		$this->load->view('v_edit',$data);
 	}
 
@@ -116,13 +121,20 @@ class Home extends CI_Controller {
 			"gender" => $this->input->post('jk'),
             "phone" => $this->input->post('phone'),
             "birth" => $this->input->post('day') . "-" . $this->input->post('month') . "-" . $this->input->post('year'),
-            "email" => $this->input->post('email'),
+			"email" => $this->input->post('email'),
             "password" => md5($this->input->post('password'))
 		
 		);
 		$email = $this->input->post('email');
-		$this->RegisterModel->ubahDataUser($email,$user);
-		redirect('index.php/Home');
+		$akun = $this->RegisterModel->get_akun($email);
+		$old_pass = md5($this->input->post('old-password'));
+		if ($akun['password'] == $old_pass) {
+			$this->RegisterModel->ubahDataUser($email,$user);
+			redirect('index.php/Home');
+		}else{
+			$this->session->set_flashdata("failed","Old Password didn't match");
+			redirect('index.php/Home/lihat_detail');
+		}
 	}
 
 }

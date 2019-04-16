@@ -31,9 +31,13 @@
                             <div class="form-group col-md-4">
                               <label for="inputState" style="color: white">Jenis Kelamin</label>
                               <select id="inputState" class="form-control" name="jk">
-                                <option selected disabled>Choose...</option>
-                                <option value="Pria">Pria</option>
+                              <?php if ($tbuser['gender'] == 'Pria') { ?>
+                                <option value="Pria" selected>Pria</option>
                                 <option value="Wanita">Wanita</option>
+                              <?php } else{ ?>
+                                <option value="Pria">Pria</option>
+                                <option value="Wanita" selected>Wanita</option>
+                              <?php } ?>
                               </select>
                               <small class="form-text text-danger"><?= form_error('jk') ?>.</small>
                             </div>
@@ -50,14 +54,18 @@
                                   <small class="form-text text-danger"><?= form_error('phone') ?>.</small>
                             </div>
                             <div class="col-md-5"></div>
-
+                            
+                            <?php $my_date = explode("-",$tbuser['birth']); ?>
                             <div class="form-group col-md-3">
                               <label for="inputCity" style="color: white">Tanggal</label>
                                   <select id="inputState" class="form-control" name="day">
-                                    <option selected>Choose...</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                  <?php foreach($date as $day){ ?>
+                                    <?php if($day == $my_date[0]){?>
+                                      <option value="<?php $day ?>" selected><?= $day ?></option>
+                                    <?php } else { ?>
+                                      <option value="<?php $day ?>"><?= $day ?></option>
+                                    <?php } ?>
+                                  <?php } ?>
                                   </select>
                                   <small class="form-text text-danger"><?= form_error('day') ?>.</small>
                               </div>
@@ -65,10 +73,13 @@
                               <div class="form-group col-md-3">
                               <label for="inputCity" style="color: white">Bulan</label>
                                   <select id="inputState" class="form-control" name="month">
-                                    <option selected>Choose...</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    <?php foreach($month as $m){ ?>
+                                      <?php if($m == $my_date[1]){?>
+                                        <option value="<?php $m ?>" selected><?= $m ?></option>
+                                      <?php } else { ?>
+                                        <option value="<?php $m ?>"><?= $m ?></option>
+                                      <?php } ?>
+                                    <?php } ?>
                                     <small class="form-text text-danger"><?= form_error('month') ?>.</small>
                                   </select>
                               </div>
@@ -76,10 +87,13 @@
                               <div class="form-group col-md-3">
                               <label for="inputCity" style="color: white">Tahun</label>
                                   <select id="inputState" class="form-control" name="year">
-                                    <option selected>Choose...</option>
-                                    <option value="2000">2000</option>
-                                    <option value="2001">2001</option>
-                                    <option value="2002">2002</option>
+                                    <?php for ($i=2000; $i <= date('Y'); $i++) { ?>
+                                      <?php if ($i == $my_date[2]) { ?>
+                                        <option value="<?php $i ?>" selected><?= $i ?></option>  
+                                      <?php } else { ?>
+                                        <option value="<?php $i ?>"><?= $i ?></option>  
+                                      <?php } ?>
+                                    <?php } ?>
                                   </select>
                                   <small class="form-text text-danger"><?= form_error('year') ?>.</small>
                               </div>
@@ -87,11 +101,16 @@
                               <div class="row">
                             <div class="form-group col-md-12">
                               <label for="email" style="color: white">Email address:</label>
-                              <input name="email" type="email" class="form-control" id="email" value="<?php echo $tbuser['email'] ?>"><br>
+                              <input name="email" type="email" class="form-control" id="email" value="<?php echo $tbuser['email'] ?>" readonly><br>
                             </div>
                             <div class="col-md-8"></div>
                             <div class="form-group col-md-8">
-                              <label for="pwd" style="color: white">Password:</label>
+                              <label for="pwd" style="color: white">Old Password:</label>
+                              <input name="old-password" type="password" class="form-control" id="pwd">
+                              <small class="form-text text-danger"><?= form_error('password') ?>.</small>
+                            </div>
+                            <div class="form-group col-md-8">
+                              <label for="pwd" style="color: white">New Password:</label>
                               <input name="password" type="password" class="form-control" id="pwd">
                               <small class="form-text text-danger"><?= form_error('password') ?>.</small>
                             </div>

@@ -84,7 +84,7 @@
                     <?php }?>
                 </tbody>
             </table>
-            <center><a href="<?= base_url(); ?>Home" style="color: white; border: 3px solid white; border-radius: 10px;"> BACK HOME</a></center>
+            <center><a href="<?= base_url(); ?>index.php/Home" style="color: white; border: 3px solid white; border-radius: 10px;"> BACK HOME</a></center>
             
 
         </div>
