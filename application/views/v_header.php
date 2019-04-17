@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/css.css">
+    <!-- <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/pizza_hut.css"> -->
     <link rel="stylesheet" type="text/css" href="font/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
@@ -94,14 +95,14 @@
                             </a>
                           </li>
                         <li>
-                            <a href="#" class="yellow">
+                            <a href="<?= base_url() ?>index.php/home/food/pizza" class="yellow">
                                 <i class="fas fa-pizza-slice text-navbar"></i>
                                 <br>
                                 PIZZA
                             </a>
                         </li>
                         <li class="yellow">
-                            <a href="#" class="yellow">
+                            <a href="<?= base_url() ?>index.php/home/food/pasta" class="yellow">
                                 <i class="fas fa-bacon text-navbar"></i>
                                 <br>
                                 PASTA

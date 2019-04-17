@@ -10,4 +10,8 @@ class FoodModel extends CI_model{
         $this->db->where('id', $id);
         $this->db->delete('tbfood');
     }
+    public function categoryFood($food){
+        $this->db->where('kategori', $food);
+        return $this->db->get('tbfood')->result_array();
+    }
 }

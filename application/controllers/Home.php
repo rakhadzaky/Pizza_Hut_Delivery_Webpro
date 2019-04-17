@@ -13,6 +13,7 @@ class Home extends CI_Controller {
 		//load library form validation
 
 		$this->load->model('RegisterModel');
+		$this->load->model('FoodModel');
 		$this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->helper('url');
@@ -135,6 +136,12 @@ class Home extends CI_Controller {
 			$this->session->set_flashdata("failed","Old Password didn't match");
 			redirect('index.php/Home/lihat_detail');
 		}
+	}
+
+	public function food($food){
+		$data['food'] = $this->FoodModel->categoryFood($food);
+		$this->load->view('v_header');
+		$this->load->view('v_list_category_food', $data);
 	}
 
 }
