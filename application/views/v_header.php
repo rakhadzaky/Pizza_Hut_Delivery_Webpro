@@ -19,7 +19,7 @@
   <div id="background-modal" class="background-modal"></div>
          <div id="modal-pesan" class="card bg-dark w-50" style="position: absolute; z-index: 10; display:none; transition: 0.5s ease; margin-left: 25%; margin-top: 100px;">
             <div class="card-header">
-            <button onclick="close_Modal_pesan()" id="button_close_modal" class="float-right fa fa-times text-light" style="background-color: transparent; border:none;"></button><h3 class="text-center text-light">MULAI PESANAN ANDA</h3>
+            <button onclick="close_Modal_pesan()" id="button_close_modal" class="button_close_modal float-right fa fa-times text-light" style="background-color: transparent; border:none;"></button><h3 class="text-center text-light">MULAI PESANAN ANDA</h3>
             </div>
             <div class="card-body">
                   <div class="row text-center text-light">
@@ -42,10 +42,10 @@
                 <button>Nanti</button>
               </div>
               <br>
-              <div id="send_it" style="display: none;">
-                <input type="text" class="form-control" name="address" placeholder="Rumah Nomor">
-                <br>
-                <button class="btn btn-danger form-control">Kirim</button>
+              <div id="send_it" class="text-center" style="display: none;">
+                <input type="text" class="form-control form-group" name="address" placeholder="No Rumah">
+                <input type="text" class="form-control form-group" name="address" placeholder="Building Name">
+                <button class="btn btn-danger w-50">Kirim</button>
               </div>
             </div>
          </div>

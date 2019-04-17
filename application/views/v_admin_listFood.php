@@ -1,20 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/css.css">
-    <link rel="stylesheet" type="text/css" href="font/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
-
-    <title>Pizza Hut Delivery</title>
-  </head>
-  <body style="color: white"><div class="container" action="<?= base_url() ?>index.php/admin">
+<div class="container" action="<?= base_url() ?>index.php/admin">
     <?php if ($this->session->flashdata('flash')) : ?>
     <div class="row mt-3">
         <div class="col-md-6">
@@ -44,13 +28,13 @@
 
     <div class="row mt-5">
         <div class="col">
-            <h3 class="text-center">Daftar User</h3>
+            <h3 class="text-center">Daftar Makanan</h3>
             <?php if (empty($foods)) : ?>
             <div class="alert alert-danger" role="alert">
                 Data tidak ditemukan
             </div>
             <?php endif; ?>
-            <button class="btn btn-primary"><span class="fa fa-plus"></span> Add Food</button>
+            <a href="<?= base_url() ?>index.php/admin/add_food" class="btn btn-primary"><span class="fa fa-plus"></span> Add Food</a>
             <table class="table mt-5">
                 <thead>
                     <tr>

@@ -23,6 +23,7 @@ public function index()
 		if ($this->input->post('keyword')) {
 			$data['user'] = $this->RegisterModel->cariDataUser();
 		}
+		$this->load->view('v_header_admin');
 		$this->load->view('v_admin', $data);
 		
 	}
@@ -42,11 +43,13 @@ public function detail($email)
 	$this->load->view('v_detail');
 	$this->RegisterModel->getUserByEmail($email);
 	$data['user'] = $this->RegisterModel->getUserByEmail($email);
+	$this->load->view('v_header_admin');
 	$this->load->view('admin/detail', $data);
 }
 
 	public function list_food(){
 		$data['foods'] = $this->FoodModel->getAllFood();
+		$this->load->view('v_header_admin');
 		$this->load->view('v_admin_listFood', $data);
 	}
 	public function add_food(){
@@ -58,6 +61,7 @@ public function detail($email)
 		$this->form_validation->set_rules('category','Category','required');
 
 		if ($this->form_validation->run() == false) {
+			$this->load->view('v_header_admin');
 			$this->load->view('v_admin_addFood');
 		}else{
 			$config['upload_path']          = './uploads/';
@@ -70,7 +74,8 @@ public function detail($email)
 			
 			if ( ! $this->upload->do_upload('img'))
                 {
-                        $error = array('error' => $this->upload->display_errors());
+						$error = array('error' => $this->upload->display_errors());
+						$this->load->view('v_header_admin');
                         $this->load->view('V_admin_addFood', $error);
                 }
                 else
