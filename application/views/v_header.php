@@ -16,6 +16,40 @@
   </head>
   <body>
     
+  <div id="background-modal" class="background-modal"></div>
+         <div id="modal-pesan" class="card bg-dark w-50" style="position: absolute; z-index: 10; display:none; transition: 0.5s ease; margin-left: 25%; margin-top: 100px;">
+            <div class="card-header">
+            <button onclick="close_Modal_pesan()" id="button_close_modal" class="float-right fa fa-times text-light" style="background-color: transparent; border:none;"></button><h3 class="text-center text-light">MULAI PESANAN ANDA</h3>
+            </div>
+            <div class="card-body">
+                  <div class="row text-center text-light">
+                      <div class="col-sm-6">
+                        <img class="delivery-button" onclick="show_footer()" width="80px" src="<?= base_url() ?>assets/img/icon/delivery.png" alt=""><br>
+                        <small><b>Delivery</b></small><br>
+                        <small>30 menit dijamin tiba<br>atau gratis 1 pizza</small>
+                      </div>
+                      <div class="col-sm-6">
+                        <img width="80px" src="<?= base_url() ?>assets/img/icon/carryout.png" alt=""><br>
+                        <small><b>Takeaway</b></small><br>
+                        <small>Pesanan sudah siap dibawa saat<br>Anda sampai di outlet</small>
+                      </div>
+                  </div>
+            </div>
+            <div class="card-footer">
+              <div id="now_or_later" class="text-center text-light" style="display: none">
+                <h4>KIRIM PESANAN SAYA UNTUK...</h4>
+                <button id="order-now" onclick="show_send_it()">Sekarang</button>
+                <button>Nanti</button>
+              </div>
+              <br>
+              <div id="send_it" style="display: none;">
+                <input type="text" class="form-control" name="address" placeholder="Rumah Nomor">
+                <br>
+                <button class="btn btn-danger form-control">Kirim</button>
+              </div>
+            </div>
+         </div>
+
     <div class="bg pt-3">
     <div class="container">
     <section class="atas">
@@ -44,7 +78,7 @@
               <div class="col-md-5"><img src="https://static.phd.co.id/PHD_Logo2019v2.png" alt="Pizza Hut" width="80%"></div>
               <div class="col-md-3"><img src="https://pizzahutid.s3.amazonaws.com/static/images/30%20Menit%20_%20Gratis%20Pizza.png" alt="" class="pt-2"></div>
               <div class="pt-2">
-                <a href="#" class="btn btn-danger pt-2"  role="button" style="width: 150px; height: 75px; border-radius: 10px;">PESAN<br>SEKARANG</a>
+                <a href="#" id="btn-pesan" onclick="show_Modal_pesan()" class="btn btn-danger pt-2"  role="button" style="width: 150px; height: 75px; border-radius: 10px;">PESAN<br>SEKARANG</a>
               </div>
               
           </div>
@@ -114,3 +148,21 @@
                    
          </div>
          </div>
+         <script>
+            function show_Modal_pesan(){
+              document.getElementById('modal-pesan').style.display = 'block';
+              document.getElementById('background-modal').style.display = 'block';
+              
+            }
+            function close_Modal_pesan(){
+              document.getElementById('modal-pesan').style.display = 'none';
+              document.getElementById('now_or_later').style.display = 'none';
+              document.getElementById('background-modal').style.display = 'none';
+            }
+            function show_footer(){
+              document.getElementById('now_or_later').style.display = 'block';
+            }
+            function show_send_it(){
+              document.getElementById('send_it').style.display = 'block';
+            }
+         </script>

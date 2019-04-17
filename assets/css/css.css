@@ -17,8 +17,6 @@ i:hover {
   color: #ff3333;
 }
 
-
-
 body {
 	background-image: url('bg.jpg');
 	background-attachment: fixed;
@@ -27,7 +25,8 @@ body {
   /* Center and scale the image nicely */
   	background-position: center;
   	background-repeat: no-repeat;
-  	background-size: cover;
+    background-size: cover;
+    
 	
 }
 
@@ -74,7 +73,18 @@ li {
     border-radius: 5px;
 }
 
+.background-modal{
+    width: 100%;
+    height: 800px;
+    position: fixed;
+    background-color: black;
+    display: none;
+    z-index: 1;
+}
 
+.delivery-button:hover{
+    cursor: pointer;
+}
 /*
 
 
