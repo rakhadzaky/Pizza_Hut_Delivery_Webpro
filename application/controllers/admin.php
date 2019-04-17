@@ -95,4 +95,10 @@ public function detail($email)
 		}
 	}
 
+	public function delete_food($id){
+		$this->FoodModel->deleteFood($id);
+		$this->session->set_flashdata('success','Delete data success');
+		redirect('index.php/admin/list_food');
+	}
+
 }

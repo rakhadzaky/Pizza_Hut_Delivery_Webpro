@@ -51,7 +51,7 @@
                         <td class="text-center">Rp<?= $food['harga']; ?></td>
                         <td class="text-center"><?= $food['kategori']; ?></td>
                         <td>
-                            <a href="<?= base_url(); ?>admin/hapus/<?= $food['id'] ?>">HAPUS</a>
+                            <a href="<?= base_url(); ?>index.php/admin/delete_food/<?= $food['id'] ?>">HAPUS</a>
                         </td>
                     </tr>
                     <?php }?>
