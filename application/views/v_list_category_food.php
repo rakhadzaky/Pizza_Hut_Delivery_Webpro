@@ -5,6 +5,9 @@
                     <h1 class="ml-4" style="margin-top: -60px;">PIZZA</h1>
                 </div>
                 <div class="mb-4 row" style="margin-top: 50px;">
+                    <?php if (empty($food)) {?>
+                        <div class="alert alert-dark form-control text-center">Data Empty</div>
+                    <?php } ?>
                     <?php foreach ($food as $content) { ?>
                         <div class="col-md-6">
                             <div class="row p-2 m-1 mt-4" style="background: rgba(70,70,70,.5); border-radius: 10px; min-height: 280px;">
