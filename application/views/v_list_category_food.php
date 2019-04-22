@@ -22,7 +22,23 @@
                                     <p style="font-size: 20pt;"><small>Rp</small><?= $content['harga'] ?></p>
                                 </div>
                                 <div class="col-sm-7">
-                                    <button class="btn btn-danger text-bold float-right">ORDER NOW</button>
+                                  <?php if (!empty($this->session->userdata('order_id'))) { ?>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                          <select name="type_pizza" id="" class="form-control">
+                                            <option value="original">Original</option>
+                                          </select>
+                                        </div>
+                                        <div class="col-sm-6">
+                                          <select name="size" id="" class="form-control">
+                                            <option value="regular">Regular</option>
+                                          </select>
+                                        </div>
+                                      </div>
+                                      <br>
+                                      <button class="btn btn-warning font-weight-bold w-100">Extra Cheese (+Rp 10,000)</button><br><br>
+                                  <?php } ?>
+                                    <button class="btn btn-danger font-weight-bold w-100">ORDER NOW</button>
                                 </div>
                             </div>
                         </div>

@@ -19,19 +19,19 @@
     
   <div id="background-modal" class="background-modal"></div>
          <div id="modal-pesan" class="card bg-dark w-50" style="position: absolute; z-index: 10; display:none; transition: 0.5s ease; margin-left: 25%; margin-top: 100px;">
-            <form action="">
+            <form action="<?= base_url() ?>index.php/pesanan/tambah_pesanan" method="post">
               <div class="card-header">
               <button onclick="close_Modal_pesan()" id="button_close_modal" class="button_close_modal float-right fa fa-times text-light" style="background-color: transparent; border:none;"></button><h3 class="text-center text-light">MULAI PESANAN ANDA</h3>
               </div>
               <div class="card-body">
                     <div class="row text-center text-light">
                         <div class="col-sm-6">
-                          <img class="delivery-button" onclick="show_footer()" width="80px" src="<?= base_url() ?>assets/img/icon/delivery.png" alt=""><br>
+                          <img class="delivery-button" onclick="show_footer_delivery()" width="80px" src="<?= base_url() ?>assets/img/icon/delivery.png" alt=""><br>
                           <small><b>Delivery</b></small><br>
                           <small>30 menit dijamin tiba<br>atau gratis 1 pizza</small>
                         </div>
                         <div class="col-sm-6">
-                          <img width="80px" src="<?= base_url() ?>assets/img/icon/carryout.png" alt=""><br>
+                        <img class="delivery-button" onclick="show_footer_take()" width="80px" src="<?= base_url() ?>assets/img/icon/delivery.png" alt=""><br>
                           <small><b>Takeaway</b></small><br>
                           <small>Pesanan sudah siap dibawa saat<br>Anda sampai di outlet</small>
                         </div>
@@ -39,10 +39,11 @@
               </div>
               <div class="card-footer">
                 <div id="now_or_later" class="text-center text-light" style="display: none">
-                  <h4>KIRIM PESANAN SAYA UNTUK...</h4>
-                  <button class="now_or_later_button" id="order-now" onclick="show_send_it()" style="border-radius : 10px 0 0 10px">Sekarang</button><!--
-                  --><button class="now_or_later_button" style="border-radius : 0 10px 10px 0">Nanti</button>
+                  <h4>KIRIM PESANAN SAYA UNTUK...</h4><br>
+                  <span class="now_or_later_button" id="order-now" onclick="show_send_it()" style="border-radius : 10px 0 0 10px">Sekarang</span><!--
+                  --><span class="now_or_later_button" style="border-radius : 0 10px 10px 0">Nanti</span>
                 </div>
+                <br>
                 <br>
                 <div id="send_it" class="text-center" style="display: none;">
                   <?php echo $map['js'];?>
@@ -50,8 +51,9 @@
                   <?php echo $map['html'];?>
                   <br>
                   <input type="text" class="form-control" name="jalan" readonly><br>
+                  <input type="hidden" name="type" id="type_order">
                   <input type="text" class="form-control" name="address" placeholder="No Rumah"><br>
-                  <input type="text" class="form-control" name="address" placeholder="Building Name"><br>
+                  <input type="text" class="form-control" name="building" placeholder="Building Name"><br>
                   <button class="btn btn-danger w-50">Konfirmasi</button>
                 </div>
               </div>
@@ -77,6 +79,7 @@
                         <a href="<?= base_url(); ?>index.php/Home/aksi_login" style="color: white; padding-right: 10px;"><i class="fas fa-user" style="color: yellow"></i> <a href="<?= base_url() ?>index.php/Home/lihat_detail" style="color: white">Hai, <?php echo $this->session->userdata("first_name"); ?></a></a>
                         <a href="<?= base_url(); ?>index.php/Home/logout" style="color: white; padding-right: 10px;"><i class="fas fa-user" style="color: yellow"></i> log out</a>
                       <?php } ?>
+                      <?= $this->session->userdata('order_id');?>
                       
                     </li>
                     <li>
@@ -168,8 +171,13 @@
               document.getElementById('background-modal').style.display = 'none';
               document.getElementById('now_or_later').style.display = 'none';
             }
-            function show_footer(){
+            function show_footer_delivery(){
               document.getElementById('now_or_later').style.display = 'block';
+              document.getElementById('type_order').setAttribute('value','delivery');
+            }
+            function show_footer_take(){
+              document.getElementById('now_or_later').style.display = 'block';
+              document.getElementById('type_order').setAttribute('value','take away');
             }
             function show_send_it(){
               document.getElementById('send_it').style.display = 'block';
