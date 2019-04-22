@@ -17,13 +17,27 @@ class Home extends CI_Controller {
 		$this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->helper('url');
-        $this->load->database();	
+		$this->load->database();
+		$this->load->library('googlemaps');
+		$config=array();
+		$config['center']="-6.973847, 107.630539";
+		$config['zoom']=17;
+		$config['map_height']="400px";
+		$config['places'] = TRUE;
+		$config['placesAutocompleteInputID'] = 'myPlaceTextBox';
+		$config['placesAutocompleteBoundsMap'] = TRUE; // set results biased towards the maps viewport
+		$config['placesAutocompleteOnChange'] = 'alert(\'You selected a place\');';
+		$this->googlemaps->initialize($config);
+		$marker=array();
+		$marker['position']="-6.973847, 107.630539";
+		$this->googlemaps->add_marker($marker);
 	}
 
 
 	public function index()
 	{
-		$this->load->view('v_header');
+        $data['map']=$this->googlemaps->create_map();
+		$this->load->view('v_header',$data);
 		$this->load->view('v_home');
 	}
 	public function register(){
@@ -41,7 +55,8 @@ class Home extends CI_Controller {
 
 			if ($this->form_validation->run() == FALSE)
 			{
-				$this->load->view('v_header');
+				$data['map']=$this->googlemaps->create_map();
+				$this->load->view('v_header',$data);
 				$this->load->view('v_login');
 			}
 			else
@@ -61,7 +76,8 @@ class Home extends CI_Controller {
 
 			if ($this->form_validation->run() == FALSE)
 			{
-				$this->load->view('v_header');
+				$data['map']=$this->googlemaps->create_map();
+				$this->load->view('v_header',$data);
 				$this->load->view('v_masuk');
 			}else{
 				$email = $this->input->post('email');
@@ -103,7 +119,8 @@ class Home extends CI_Controller {
 	}
 
 	function loginsuccess(){
-		$this->load->view('v_header');
+		$data['map']=$this->googlemaps->create_map();
+		$this->load->view('v_header',$data);
 		$this->load->view('v_logsuccess');
 	}
 
@@ -111,7 +128,8 @@ class Home extends CI_Controller {
 		$data['tbuser'] = $this->RegisterModel->get_akun($this->session->userdata("email"));
 		$data['date'] = $this->date;
 		$data['month'] = $this->month;
-		$this->load->view('v_header');
+		$data['map']=$this->googlemaps->create_map();
+		$this->load->view('v_header',$data);
 		$this->load->view('v_edit',$data);
 	}
 
@@ -140,7 +158,8 @@ class Home extends CI_Controller {
 
 	public function food($food){
 		$data['food'] = $this->FoodModel->categoryFood($food);
-		$this->load->view('v_header');
+		$data['map']=$this->googlemaps->create_map();
+		$this->load->view('v_header',$data);
 		$this->load->view('v_list_category_food', $data);
 	}
 

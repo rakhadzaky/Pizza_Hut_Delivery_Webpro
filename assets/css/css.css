@@ -93,6 +93,15 @@ li {
 .delivery-button:hover{
     cursor: pointer;
 }
+
+.now_or_later_button{
+    padding: 15px;
+    background: transparent;
+    border: 1px solid white;
+    font-size: 16pt;
+    margin: 0;
+    color: white;
+}
 /*
 
 
