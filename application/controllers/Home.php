@@ -130,21 +130,15 @@ class Home extends CI_Controller {
 	}
 
 	public function lihat_predetail(){
-		
-		$this->load->view('v_header');
-		$this->load->view('v_predetail');
-		$this->load->view('v_footer');
-	}
-	
-	public function lihat_detail(){
 		$data['tbuser'] = $this->RegisterModel->get_akun($this->session->userdata("email"));
 		$data['date'] = $this->date;
 		$data['month'] = $this->month;
 		$data['map']=$this->googlemaps->create_map();
-		$this->load->view('v_header',$data);
-		$this->load->view('v_edit',$data);
+		$this->load->view('v_header');
+		$this->load->view('v_predetail', $data);
 		$this->load->view('v_footer');
 	}
+	
 
 	public function edituser(){
 		$user = array(
