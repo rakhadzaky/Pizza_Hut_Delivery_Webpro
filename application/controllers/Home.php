@@ -40,6 +40,7 @@ class Home extends CI_Controller {
         $data['map']=$this->googlemaps->create_map();
 		$this->load->view('v_header',$data);
 		$this->load->view('v_home');
+		$this->load->view('v_footer');
 	}
 	public function register(){
 		$this->load->library('form_validation');
@@ -59,6 +60,7 @@ class Home extends CI_Controller {
 				$data['map']=$this->googlemaps->create_map();
 				$this->load->view('v_header',$data);
 				$this->load->view('v_login');
+				$this->load->view('v_footer');
 			}
 			else
 			{
@@ -80,6 +82,7 @@ class Home extends CI_Controller {
 				$data['map']=$this->googlemaps->create_map();
 				$this->load->view('v_header',$data);
 				$this->load->view('v_masuk');
+				$this->load->view('v_footer');
 			}else{
 				$email = $this->input->post('email');
 				$password = $this->input->post('password');
@@ -123,6 +126,7 @@ class Home extends CI_Controller {
 		$data['map']=$this->googlemaps->create_map();
 		$this->load->view('v_header',$data);
 		$this->load->view('v_logsuccess');
+		$this->load->view('v_footer');
 	}
 
 	public function lihat_detail(){
@@ -132,6 +136,7 @@ class Home extends CI_Controller {
 		$data['map']=$this->googlemaps->create_map();
 		$this->load->view('v_header',$data);
 		$this->load->view('v_edit',$data);
+		$this->load->view('v_footer');
 	}
 
 	public function edituser(){
@@ -162,6 +167,7 @@ class Home extends CI_Controller {
 		$data['map']=$this->googlemaps->create_map();
 		$this->load->view('v_header',$data);
 		$this->load->view('v_list_category_food', $data);
+		$this->load->view('v_footer');
 	}
 
 	public function cart($id_pemesanan){
@@ -169,6 +175,7 @@ class Home extends CI_Controller {
 		$data['cart'] = $this->OrderModel->selectCart($id_pemesanan);
 		$this->load->view('v_header',$data);
 		$this->load->view('v_cart', $data);
+		$this->load->view('v_footer');
 	}
 	
 	public function removeCart($id){

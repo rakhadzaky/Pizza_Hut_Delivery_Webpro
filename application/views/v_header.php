@@ -66,34 +66,34 @@
     <section class="atas">
           <div class="row">
                 <br>
-                <ul class="nav navbar-nav col-md-2 iden" class="pt-2">
+                <ul class="nav navbar-nav col-md-3 iden" class="pt-2">
                     <li>
-                      <a href="#" class="active" style="color: white;">Id</a>
+                      <a href="#" class="active" style="color: red; padding-left: 2px; padding-right: 2px;">ID</a>
                       |
-                      <a href="#" style="color: white;">En</a>
+                      <a href="#" style="color: white; padding-left: 2px; padding-right: 2px;">EN</a>
                     </li>
                     <li>
                       <?php if ($this->session->userdata("status") != "login") {?>
-                        <a href="<?= base_url(); ?>index.php/Home/aksi_login" style="color: white; padding-right: 10px;"><i class="fas fa-user" style="color: yellow"></i> masuk</a>
-                        <a href="<?= base_url() ?>index.php/Home/register" style="color: white;"><i class="fas fa-user" style="color: yellow"></i> daftar</a>
+                        <a href="<?= base_url(); ?>index.php/Home/aksi_login" style="color: white; padding-right: 10px; font-size: 12px; font-weight: bold; text-transform: uppercase;"><i class="fas fa-user" style="color: yellow; font-size: 12px;"></i> masuk</a>
+                        <a href="<?= base_url() ?>index.php/Home/register" style="color: white; font-size: 12px; font-weight: bold; text-transform: uppercase;"><i class="fas fa-user" style="color: yellow; font-size: 12px;"></i> daftar</a>
                       <?php } else{ ?>
-                        <a href="<?= base_url(); ?>index.php/Home/aksi_login" style="color: white; padding-right: 10px;"><i class="fas fa-user" style="color: yellow"></i> <a href="<?= base_url() ?>index.php/Home/lihat_detail" style="color: white">Hai, <?php echo $this->session->userdata("first_name"); ?></a></a>
-                        <a href="<?= base_url(); ?>index.php/Home/logout" style="color: white; padding-right: 10px;"><i class="fas fa-user" style="color: yellow"></i> log out</a>
+                        <a href="<?= base_url(); ?>index.php/Home/aksi_login" style="color: white; padding-right: 10px; font-size: 12px; text-transform: uppercase;"><i class="fas fa-user" style="color: yellow"></i> <a href="<?= base_url() ?>index.php/Home/lihat_predetail" style="color: white; font-size: 12px; font-weight: bold; text-transform: uppercase;">HI, <?php echo $this->session->userdata("first_name"); ?></a></a>
+                        <a href="<?= base_url(); ?>index.php/Home/logout" style="color: white; padding-right: 10px; font-size: 12px; font-weight: bold; text-transform: uppercase;"><i class="fas fa-user" style="color: yellow; font-size: 12px;"></i> log out</a>
                       <?php } ?>
-                      <?= $this->session->userdata('order_id');?>
-                      <?= $this->session->userdata('order_qty'); ?>
                     </li>
                     <li>
                       <a href="<?= base_url(); ?>index.php/admin" style="color: white; padding-right: 10px;"><i class="fas fa-user" style="color: yellow"></i> admin</a>
                     </li>               
                 </ul>
-              <div class="col-md-5"><img src="https://static.phd.co.id/PHD_Logo2019v2.png" alt="Pizza Hut" width="80%"></div>
-              <div class="col-md-3"><img src="https://pizzahutid.s3.amazonaws.com/static/images/30%20Menit%20_%20Gratis%20Pizza.png" alt="" class="pt-2"></div>
+                <div class="col-md-4"><img src="https://static.phd.co.id/PHD_Logo2019v2.png" alt="Pizza Hut" width="260" height="60"></div>
+              <div class="col-md-3"><img src="https://pizzahutid.s3.amazonaws.com/static/images/30%20Menit%20_%20Gratis%20Pizza.png" alt="" class="pt-2" width="170" height="55"></div>
               <div class="pt-2">
                 <?php if (empty($this->session->userdata("status"))) { ?>
-                  <a href="<?= base_url() ?>index.php/Home/aksi_login" id="btn-pesan" class="btn btn-danger pt-2"  role="button" style="width: 150px; height: 75px; border-radius: 10px;">PESAN<br>SEKARANG</a>
+                  <a href="<?= base_url() ?>index.php/Home/aksi_login" id="btn-pesan" class="btn btn-danger pt-2"  role="button" style="padding: 5px; position: relative; font-size: 21px; font-family: Arial;  width: 150px; line-height: 1.1; font-weight: bold;">PESAN<br>SEKARANG</a>
+                <?php }else if(!empty($this->session->userdata("order_id"))) { ?>
+                  <a href="<?= base_url() ?>index.php/home/cart/<?= $this->session->userdata('order_id') ?>" style="font-decoration:none; color: red; font-size:36pt;"><span class="fa fa-box-open"></span><span style="margin-left: -36px; color:white; font-size:20pt;"><?= $this->session->userdata('order_qty') ?></span></a>
                 <?php }else{ ?>
-                  <a href="#" id="btn-pesan" onclick="show_Modal_pesan()" class="btn btn-danger pt-2"  role="button" style="width: 150px; height: 75px; border-radius: 10px;">PESAN<br>SEKARANG</a>
+                  <a href="" id="btn-pesan" onclick="show_Modal_pesan()" class="btn btn-danger pt-2"  role="button" style="padding: 5px; position: relative; font-size: 21px; font-family: Arial;  width: 150px; line-height: 1.1; font-weight: bold;">PESAN<br>SEKARANG</a>
                 <?php } ?>
               </div>
               
@@ -101,61 +101,65 @@
 
      </section>   
           <div class="row">
-             <ul class="list-inline text-center logo" class="bg">
-                          <li>
-                            <a class="yellow" href="<?= base_url() ?>index.php/Home">
-                                <i class="fas fa-pizza-slice text-navbar"></i>
+          <ul class=" text-center logo col-md-12 mr-5">                    
+                          <li style="width: 132px; height: 102px; border-right: 1px solid #999999; border-top: 1px solid #999999; padding-top: 10px;" >
+                            <a href="<?= base_url() ?>index.php/Home">
+                                <i><img src="https://static.phd.co.id/icons/categoryicons/promo.png" style="width:57px; height:47px; padding-bottom: 10px;"></i>
                                 <br>
-                                HOT PROMO
+                                <span class="tulisan">HOT PROMO</span>
                             </a>
-                          </li>
-                        <li>
-                            <a href="<?= base_url() ?>index.php/home/food/pizza" class="yellow">
-                                <i class="fas fa-pizza-slice text-navbar"></i>
+                          </li><!--
+                        --><li style="width: 132px; height: 102px; border-right: 1px solid #999999; border-top: 1px solid #999999; padding-top: 10px;">
+                            <a href="<?= base_url() ?>index.php/home/food/pizza">
+                                <i><img src="https://static.phd.co.id/icons/categoryicons/pizza.png" style="width:57px; height:47px; "></i> 
                                 <br>
-                                PIZZA
+                                <span class="tulisan">PIZZA</span>
                             </a>
-                        </li>
-                        <li class="yellow">
-                            <a href="<?= base_url() ?>index.php/home/food/pasta" class="yellow">
-                                <i class="fas fa-bacon text-navbar"></i>
+                        </li><!--
+
+                        --><li style="width: 132px; height: 102px; border-right: 1px solid #999999; border-top: 1px solid #999999; padding-top: 10px;">
+                            <a href="<?= base_url() ?>index.php/home/food/pasta">
+                                 <i><img src="https://static.phd.co.id/icons/categoryicons/pasta.png" style="width:57px; height:47px;"></i>
                                 <br>
-                                PASTA
+                                <span class="tulisan">PASTA</span>
                             </a>
-                        </li>
-                        <li class="yellow">
-                            <a href="#" class="yellow">
-                                <i class="fas fa-drumstick-bite text-navbar"></i>
+                        </li><!--
+
+                        --><li style="width: 132px; height: 102px; border-right: 1px solid #999999; border-top: 1px solid #999999; padding-top: 10px;">
+                            <a href="<?= base_url() ?>index.php/home/food/chicken">
+                                <i><img src="https://static.phd.co.id/icons/categoryicons/chicken.png" style="width:57px; height:47px;"></i>
                                 <br>
-                                CHICKEN
+                                 <span class="tulisan">CHICKEN</span>
                             </a>
-                        </li>
-                        <li class="yellow">
-                            <a href="#" class="yellow">
-                                <i class="fas fa-drumstick-bite text-navbar"></i>
+                        </li><!--
+                        --><li style="width: 132px; height: 102px; border-right: 1px solid #999999; border-top: 1px solid #999999; padding-top: 10px;">
+                            <a href="<?= base_url() ?>index.php/home/food/rice" class="yellow">
+                                <i><img src="https://static.phd.co.id/icons/categoryicons/rice.png" style="width:57px; height:47px;"></i>
                                 <br>
-                                RICE
+                                <span class="tulisan">RICE</span>
                             </a>
-                        </li>
-                        <li>
-                            <a href="" class="yellow">
-                                <i class="fas fa-drumstick-bite text-navbar" ></i>
+                        </li><!--
+
+                        --><li style="width: 132px; height: 102px; border-right: 1px solid #999999; border-top: 1px solid #999999; padding-top: 10px;">
+                            <a href="">
+                                <i><img src="https://static.phd.co.id/icons/categoryicons/others_icon.png" style="width:57px; height:47px;"></i>
                                 <br>
-                                MORE<b class="caret"></b>
+                                 <span class="tulisan">MORE</span>
                             </a>
                             
-                        </li>
-                        <li class="yellow">
-                            <a href="#remodal-target" data-url="https://www.phd.co.id/id/getpopup/findAHut" data-reference="main-content--find-a-hut" class="yellow">
-                                <i class="fas fa-drumstick-bite text-navbar"></i>
+                        </li><!--
+                        --><li style="width: 132px; height: 102px; border-right: 1px solid #999999; border-top: 1px solid #999999; padding-top: 10px;">
+                            <a href="#remodal-target" data-url="https://www.phd.co.id/id/getpopup/findAHut" data-reference="main-content--find-a-hut">
+                                <i><img src="https://static.phd.co.id/icons/categoryicons/store_location_icon_03.png" style="width:100px; height:47px;"></i>
                                 <br>
-                                OUTLET
-                        </li>
-                        <li class="yellow">
-                            <a  href="" class="yellow">
-                                <i class="fas fa-drumstick-bite text-navbar"></i>
+                                <span class="tulisan">OUTLET</span>
+                        </li><!--
+
+                        --><li class="yellow" style="width: 132px; height: 102px; border-top: 1px solid #999999; padding-top: 10px;">
+                            <a  href="">
+                                <i><img src="https://static.phd.co.id/icons/categoryicons/icon_poin.png" style="width:57px; height:47px;"></i>
                                 <br>
-                                LOYALTY
+                                <span class="tulisan">LOYALTY</span>
                             </a>
                             
                         </li>
