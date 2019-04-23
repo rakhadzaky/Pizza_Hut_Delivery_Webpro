@@ -1,9 +1,6 @@
 <?php
 class RegisterModel extends CI_model
 {
- 
-	
-
 	public function RegisterUser()
 	{
 		$data = [

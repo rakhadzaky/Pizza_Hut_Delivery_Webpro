@@ -10,6 +10,10 @@
                           <form action="<?= base_url() ?>index.php/Home/aksi_login" method="post" class="pl-3">
                           <div class="row">
                             <div class="col-md-12"><a style="font-size: 20pt; color: white;">DAFTAR</a></div>
+                            <?php if (!empty($this->session->flashdata('failed'))) {?>
+                              <div class="alert alert-danger"><?= $this->session->flashdata('failed'); ?></div>
+                            <?php } ?>
+                            <br>
                             <div class="col-md-6">
                               <button type="submit" class="btn btn-danger" style="width: 300px;" href="<?= base_url() ?>index.php/Home/register">DAFTAR</button>
                             </div><br><br><br>

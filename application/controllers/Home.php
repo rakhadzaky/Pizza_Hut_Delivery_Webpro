@@ -14,6 +14,7 @@ class Home extends CI_Controller {
 
 		$this->load->model('RegisterModel');
 		$this->load->model('FoodModel');
+		$this->load->model('OrderModel');
 		$this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->helper('url');
@@ -92,20 +93,20 @@ class Home extends CI_Controller {
 				if($cek > 0){
 					$data_user = $this->RegisterModel->get_akun($email);
 					$data_session = array(
+						'id_user' => $data_user['id_user'],
 						'first_name' => $data_user['first_name'],
 						'lastName' => $data_user['last_name'],
 						'gender' => $data_user['gender'],
 						'phone' => $data_user['phone'],
 						'birth' => $data_user['birth'],
 						'email' => $data_user['email'],
-						'password' => $data_user['password'],
 						'status' => "login"
 						);
 					$this->session->set_userdata($data_session);
 					redirect('index.php/Home/loginsuccess');
 		 
 				}else{
-					echo "Username dan password salah !";
+					$this->session->set_flashdata('failed','Username Password salah');
 					redirect('index.php/Home/aksi_login');
 				}
 			}
@@ -161,6 +162,25 @@ class Home extends CI_Controller {
 		$data['map']=$this->googlemaps->create_map();
 		$this->load->view('v_header',$data);
 		$this->load->view('v_list_category_food', $data);
+	}
+
+	public function cart($id_pemesanan){
+		$data['map']=$this->googlemaps->create_map();
+		$data['cart'] = $this->OrderModel->selectCart($id_pemesanan);
+		$this->load->view('v_header',$data);
+		$this->load->view('v_cart', $data);
+	}
+	
+	public function removeCart($id){
+		$this->OrderModel->removeCart($id);
+		redirect("index.php/home/cart/".$this->session->userdata('order_id'));
+	}
+
+	public function checkOut(){
+		$this->OrderModel->checkOut($this->session->userdata('order_id'));
+		$this->session->unset_userdata('order_id');
+		$this->session->unset_userdata('order_qty');
+		redirect('index.php/home');
 	}
 
 }

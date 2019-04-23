@@ -21,7 +21,7 @@
          <div id="modal-pesan" class="card bg-dark w-50" style="position: absolute; z-index: 10; display:none; transition: 0.5s ease; margin-left: 25%; margin-top: 100px;">
             <form action="<?= base_url() ?>index.php/pesanan/tambah_pesanan" method="post">
               <div class="card-header">
-              <button onclick="close_Modal_pesan()" id="button_close_modal" class="button_close_modal float-right fa fa-times text-light" style="background-color: transparent; border:none;"></button><h3 class="text-center text-light">MULAI PESANAN ANDA</h3>
+              <div onclick="close_Modal_pesan()" id="button_close_modal" class="button_close_modal float-right fa fa-times text-light" style="background-color: transparent; border:none;"></div><h3 class="text-center text-light">MULAI PESANAN ANDA</h3>
               </div>
               <div class="card-body">
                     <div class="row text-center text-light">
@@ -52,6 +52,7 @@
                   <br>
                   <input type="text" class="form-control" name="jalan" readonly><br>
                   <input type="hidden" name="type" id="type_order">
+                  <input type="hidden" name="id_user" value="<?= $this->session->userdata('id_user') ?>">
                   <input type="text" class="form-control" name="address" placeholder="No Rumah"><br>
                   <input type="text" class="form-control" name="building" placeholder="Building Name"><br>
                   <button class="btn btn-danger w-50">Konfirmasi</button>
@@ -80,7 +81,7 @@
                         <a href="<?= base_url(); ?>index.php/Home/logout" style="color: white; padding-right: 10px;"><i class="fas fa-user" style="color: yellow"></i> log out</a>
                       <?php } ?>
                       <?= $this->session->userdata('order_id');?>
-                      
+                      <?= $this->session->userdata('order_qty'); ?>
                     </li>
                     <li>
                       <a href="<?= base_url(); ?>index.php/admin" style="color: white; padding-right: 10px;"><i class="fas fa-user" style="color: yellow"></i> admin</a>
@@ -89,7 +90,11 @@
               <div class="col-md-5"><img src="https://static.phd.co.id/PHD_Logo2019v2.png" alt="Pizza Hut" width="80%"></div>
               <div class="col-md-3"><img src="https://pizzahutid.s3.amazonaws.com/static/images/30%20Menit%20_%20Gratis%20Pizza.png" alt="" class="pt-2"></div>
               <div class="pt-2">
-                <a href="#" id="btn-pesan" onclick="show_Modal_pesan()" class="btn btn-danger pt-2"  role="button" style="width: 150px; height: 75px; border-radius: 10px;">PESAN<br>SEKARANG</a>
+                <?php if (empty($this->session->userdata("status"))) { ?>
+                  <a href="<?= base_url() ?>index.php/Home/aksi_login" id="btn-pesan" class="btn btn-danger pt-2"  role="button" style="width: 150px; height: 75px; border-radius: 10px;">PESAN<br>SEKARANG</a>
+                <?php }else{ ?>
+                  <a href="#" id="btn-pesan" onclick="show_Modal_pesan()" class="btn btn-danger pt-2"  role="button" style="width: 150px; height: 75px; border-radius: 10px;">PESAN<br>SEKARANG</a>
+                <?php } ?>
               </div>
               
           </div>

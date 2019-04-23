@@ -38,7 +38,7 @@
                                       <br>
                                       <button class="btn btn-warning font-weight-bold w-100">Extra Cheese (+Rp 10,000)</button><br><br>
                                   <?php } ?>
-                                    <button class="btn btn-danger font-weight-bold w-100">ORDER NOW</button>
+                                    <a href="<?= base_url() ?>index.php/pesanan/add_to_cart/<?= $content['id'] ?>" class="btn btn-danger font-weight-bold w-100">ORDER NOW</a>
                                 </div>
                             </div>
                         </div>
