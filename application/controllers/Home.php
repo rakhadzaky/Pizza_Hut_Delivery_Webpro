@@ -39,6 +39,8 @@ class Home extends CI_Controller {
         $data['map']=$this->googlemaps->create_map();
 		$this->load->view('v_header',$data);
 		$this->load->view('v_home');
+		$this->load->view('v_footer');
+
 	}
 	public function register(){
 		$this->load->library('form_validation');
@@ -58,6 +60,7 @@ class Home extends CI_Controller {
 				$data['map']=$this->googlemaps->create_map();
 				$this->load->view('v_header',$data);
 				$this->load->view('v_login');
+				$this->load->view('v_footer');
 			}
 			else
 			{
@@ -79,6 +82,7 @@ class Home extends CI_Controller {
 				$data['map']=$this->googlemaps->create_map();
 				$this->load->view('v_header',$data);
 				$this->load->view('v_masuk');
+				$this->load->view('v_footer');
 			}else{
 				$email = $this->input->post('email');
 				$password = $this->input->post('password');
@@ -122,8 +126,16 @@ class Home extends CI_Controller {
 		$data['map']=$this->googlemaps->create_map();
 		$this->load->view('v_header',$data);
 		$this->load->view('v_logsuccess');
+		$this->load->view('v_footer');
 	}
 
+	public function lihat_predetail(){
+		
+		$this->load->view('v_header');
+		$this->load->view('v_predetail');
+		$this->load->view('v_footer');
+	}
+	
 	public function lihat_detail(){
 		$data['tbuser'] = $this->RegisterModel->get_akun($this->session->userdata("email"));
 		$data['date'] = $this->date;
@@ -131,6 +143,7 @@ class Home extends CI_Controller {
 		$data['map']=$this->googlemaps->create_map();
 		$this->load->view('v_header',$data);
 		$this->load->view('v_edit',$data);
+		$this->load->view('v_footer');
 	}
 
 	public function edituser(){
@@ -161,6 +174,7 @@ class Home extends CI_Controller {
 		$data['map']=$this->googlemaps->create_map();
 		$this->load->view('v_header',$data);
 		$this->load->view('v_list_category_food', $data);
+		$this->load->view('v_footer');
 	}
 
 }

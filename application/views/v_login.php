@@ -16,9 +16,9 @@
                         ?></li>
                         </ul>
                     </div>
-                    <div class="row">
-                        <form action="<?= base_url() ?>index.php/Home/register" class="col-md-8" method="post">
-                          <div class="form-row col-md-12"> 
+                    <div class="row" >
+                        <form action="<?= base_url() ?>index.php/Home/register" class="col-md-8" method="post" style="background: rgba(0,0,0,0.5); border-radius: 10px; min-height: 280px;">
+                          <div class="form-row col-md-12" > 
                             <div class="col-md-9">
                                   <label for="inputName" style="color: white">Nama lengkap</label>
                                   <input type="text" class="form-control" placeholder="First name" name="firstName">
@@ -95,16 +95,35 @@
                               <input name="password" type="password" class="form-control" id="pwd">
                               <small class="form-text text-danger"><?= form_error('password') ?>.</small>
                             </div>
-                            <div class="col-md-8"></div>
-                            <div class="form-group form-check">
+                            <div class="col-md-8">
+                              <label rel="no" style="color: white">
+                                                <input type="radio" name="methodradio" id="paymentonline" >
+                                                <span class="small-text">
+                                            Saya setuju dengan<a href="#" target="_blank" style="color: #fdd75f;">syarat</a>dan mengerti bahwa informasi saya akan digunakan sebagai penjelasalan dalam halaman ini dan<a href="#" target="_blank" style="color: #fdd75f;">kebijakan privasi</a>
+                                        </span> Pizza Hut
+                                        <em style="color: red;">*</em>
+                              </label><!-- <label class="agreeterms">
+                                        <span class="small-text">
+                                            Saya setuju dengan                                            <a href="https://www.phd.co.id/en/home/term" target="_blank">syarat</a>
+                                            dan mengerti bahwa informasi saya akan digunakan sebagai penjelasalan dalam halaman ini dan                                            <a href="https://www.phd.co.id/en/home/privacy" target="_blank">kebijakan privasi</a>
+                                        </span> Pizza Hut
+                                        <em class="required" aria-required="true">*</em>
+                                    </label> -->
+                            </div>
+                            <div class="col-md-8">
+                              <button type="submit" class="btn btn-danger" style="width: 315px; height: 37px;">Submit</button>
+                            </div>
+                            <!-- <div class="form-group form-check">
                               <label class="form-check-label">
                                 <input class="form-check-input " type="checkbox" style="color: white"><span class="small-text col-md-6" style="color: white">
-                                                  Saya setuju dengan <a href="https://www.phd.co.id/id/home/term" target="_blank" style="color: white">syarat</a>
-                                                  dan mengerti bahwa informasi saya akan <br> digunakan sebagai penjelasalan dalam halaman ini dan <a href="https://www.phd.co.id/id/home/privacy" target="_blank" style="color: white">kebijakan privasi</a>
+                                                  Saya setuju dengan <a href="#" target="_blank" style="color: white">syarat</a>
+                                                  dan mengerti bahwa informasi saya akan <br> digunakan sebagai penjelasalan dalam halaman ini dan <a href="#" target="_blank" style="color: white">kebijakan privasi</a>
                                               </span> Pizza Hut
                               </label>
+                            </div> -->
+                            <div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            
                         </div>
                           </div>                  
                         </form>
@@ -121,76 +140,7 @@
                 </div>
                </section>
               
-            
-        <footer class="text-white p-2 bg">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-2">
-                    
-                      <ul>
-                        <li style="color: yellow;">MENU</li><br>
-                        <li>Hot Promo</li><br>
-                        <li>Pizza</li><br>
-                        <li>Pasta</li><br>
-                        <li>Chicken</li><br>
-                        <li>Rice</li><br>
-                        <li>Snacks</li><br>
-                        <li>Drinks</li>
-                        <li>Desserts</li> 
-                      </ul>
-                  </div>
-                  <div class="col-md-2">
-                     <ul>
-                        <li style="color: yellow;" class="pb-1">ABOUT</li><br>
-                        <li>PHD Profile</li><br>
-                        <li>Outlet Locations</li><br>
-                        <li>PHD App</li><br>
-                        <li>Uefa</li>
-                      </ul>
-                  </div>
-                  <div class="col-md-2">
-                    <ul>
-                      <li style="color: yellow;" class="pb-1">CUSTOMER SERVICE</li><br>
-                      <li>FAQ</li><br>
-                      <li>Contact Us</li>
-                    </ul>
-                    <br>
-                    <ul>
-                      <li style="color: yellow;" class="pb-1">MY ACCOUNT</li><br>
-                      <li>Create an account</li><br>
-                      <li>Sign in</li><br>
-                      <li>Point</li>
-                    </ul>
-                  </div>
-                  <div class="col-md-2">
-                     <ul>
-                        <li style="color: yellow;" class="pb-1">POLICIES</li><br>
-                        <li>Privacy Policy</li><br>
-                        <li>Terms</li><
-                      </ul>
-                  </div>
-                  <div class="col-md-2">
-                     <ul>
-                        <li style="color: yellow;" class="pb-1">CONNECT WITH PHD</li><br>
-                        <li>Privacy Policy</li><br>
-                        <li>Privacy Policy</li><br>
-                        <li>Privacy Policy</li><br>
-                        <li>Privacy Policy</li><br>
-                        <li>Privacy Policy</li><br>
-                        <li>Terms </li>
-                      </ul>
-                  </div>
-
-                  <div class="col-md-2">
-                    <img style="max-width: 150%" src="https://static.phd.co.id/icons/Apple_Store_Logo.png" class="pt-5">
-                    <img style="max-width: 150%" src="https://static.phd.co.id/icons/Google_Play_Store_Logo.png" class="pt-3">
-                    <img src="https://static.phd.co.id/icons/halal_logo.png" class="pt-3"> 
-                  </div>
-
-              </div>
-            </div>
-            
-      </footer>    
+         
                 
 
 
