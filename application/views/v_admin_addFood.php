@@ -65,7 +65,7 @@
                 </div>
                 <button class="btn btn-success"><span class="fa fa-paper-plane"></span> Submit</button>
             </form>
-            <center><a href="<?= base_url(); ?>index.php/Home" style="color: white; border: 3px solid white; border-radius: 10px;"> BACK HOME</a></center>
+            
         </div>
     </div>
 </div> 

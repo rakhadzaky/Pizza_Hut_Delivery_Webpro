@@ -95,7 +95,11 @@ class Home extends CI_Controller {
 
 				if($cek > 0){
 					$data_user = $this->RegisterModel->get_akun($email);
-					$data_session = array(
+					
+					if($data_user['email']=='admin@gmail.com'){
+						redirect('index.php/admin');
+					}else{
+						$data_session = array(
 						'first_name' => $data_user['first_name'],
 						'lastName' => $data_user['last_name'],
 						'gender' => $data_user['gender'],
@@ -105,8 +109,11 @@ class Home extends CI_Controller {
 						'password' => $data_user['password'],
 						'status' => "login"
 						);
-					$this->session->set_userdata($data_session);
-					redirect('index.php/Home/loginsuccess');
+
+						$this->session->set_userdata($data_session);
+						redirect('index.php/Home/loginsuccess');
+					}
+					
 		 
 				}else{
 					echo "Username dan password salah !";

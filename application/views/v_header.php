@@ -11,7 +11,7 @@
     <!-- <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/pizza_hut.css"> -->
     <link rel="stylesheet" type="text/css" href="font/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
+    <link rel="shortcut icon" type="text/css" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnO8d0OS9wS-aQhqD7HSorQ7zQvCv_T_81Zx5vNvFJjsxgjfhs0Q">
 
     <title>Pizza Hut Delivery</title>
   </head>
@@ -37,6 +37,8 @@
                         </div>
                     </div>
               </div>
+
+
               <div class="card-footer">
                 <div id="now_or_later" class="text-center text-light" style="display: none">
                   <h4>KIRIM PESANAN SAYA UNTUK...</h4><br>
@@ -81,11 +83,10 @@
                       <?php } ?>
                       
                     </li>
-                    <li>
-                      <a href="<?= base_url(); ?>index.php/admin" style="color: white; padding-right: 10px;"><i class="fas fa-user" style="color: yellow"></i> admin</a>
-                    </li>               
+                                  
                 </ul>
-              <div class="col-md-4"><img src="https://static.phd.co.id/PHD_Logo2019v2.png" alt="Pizza Hut" width="260" height="60"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-3"><img src="https://static.phd.co.id/PHD_Logo2019v2.png" alt="Pizza Hut" width="260" height="60"></div>
               <div class="col-md-3"><img src="https://pizzahutid.s3.amazonaws.com/static/images/30%20Menit%20_%20Gratis%20Pizza.png" alt="" class="pt-2" width="170" height="55"></div>
               <div class="pt-2">
                 <a href="#" id="btn-pesan" onclick="show_Modal_pesan()" class="btn btn-danger pt-2"  role="button" style="padding: 5px; position: relative; font-size: 21px; font-family: Arial;  width: 150px; line-height: 1.1; font-weight: bold;">PESAN<br>SEKARANG</a>

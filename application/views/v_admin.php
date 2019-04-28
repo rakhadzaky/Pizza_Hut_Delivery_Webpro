@@ -13,18 +13,7 @@
     <?php endif; ?>
 
 
-    <div class="row mt-3">
-        <div class="col md-6">
-            <form action="" method="post">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Cari data user ... " name="keyword">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="submit">Cari</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
+    
 
     <div class="row mt-5">
         <div class="col">
@@ -68,7 +57,7 @@
                     <?php }?>
                 </tbody>
             </table>
-            <center><a href="<?= base_url(); ?>index.php/Home" style="color: white; border: 3px solid white; border-radius: 10px;"> BACK HOME</a></center>
+            
             
 
         </div>

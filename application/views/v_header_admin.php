@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/css.css">
     <link rel="stylesheet" type="text/css" href="font/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="shortcut icon" type="text/css" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnO8d0OS9wS-aQhqD7HSorQ7zQvCv_T_81Zx5vNvFJjsxgjfhs0Q">
 
 
     <title>Pizza Hut Delivery</title>
@@ -18,7 +19,7 @@
     <nav class="navbar navbar-expand-sm bg-dark">
         <ul class="navbar nav">
             <li class="nav-item">
-                <a href="<?= base_url() ?>index.php/home" class="nav-link text-light">Home</a>
+                <a href="<?= base_url() ?>index.php/admin" class="nav-link text-light">Home</a>
             </li>
             <li class="nav-item">
                 <a href="<?= base_url() ?>index.php/admin/list_food" class="nav-link text-light">Foods</a>
