@@ -132,23 +132,17 @@
                             <div class="col-md-8"></div>
                             <div class="form-group col-md-8">
                               <label for="pwd" style="color: white">Password:</label>
-                              <input name="password" type="password" class="form-control" id="pwd">
+                              <input name="password" type="password" class="form-control" id="pwd" pattern=".{6,}"   required title="6 characters minimum">
                               <small class="form-text text-danger"><?= form_error('password') ?>.</small>
                             </div>
                             <div class="col-md-8">
-                              <label rel="no" style="color: white">
-                                                <input type="radio" name="methodradio" id="paymentonline" >
+                              <label rel="no" style="color: white" onload="disableSubmit()">
+                                                <input type="radio" name="terms" id="terms" onchange="activateButton(this)" >
                                                 <span class="small-text">
                                             Saya setuju dengan<a href="#" target="_blank" style="color: #fdd75f;">syarat</a>dan mengerti bahwa informasi saya akan digunakan sebagai penjelasalan dalam halaman ini dan<a href="#" target="_blank" style="color: #fdd75f;">kebijakan privasi</a>
                                         </span> Pizza Hut
                                         <em style="color: red;">*</em>
-                              </label><!-- <label class="agreeterms">
-                                        <span class="small-text">
-                                            Saya setuju dengan                                            <a href="https://www.phd.co.id/en/home/term" target="_blank">syarat</a>
-                                            dan mengerti bahwa informasi saya akan digunakan sebagai penjelasalan dalam halaman ini dan                                            <a href="https://www.phd.co.id/en/home/privacy" target="_blank">kebijakan privasi</a>
-                                        </span> Pizza Hut
-                                        <em class="required" aria-required="true">*</em>
-                                    </label> -->
+                              </label>
                             </div>
                             <div class="col-md-8">
                               <button type="submit" class="btn btn-danger" style="width: 315px; height: 37px;">Submit</button>
@@ -184,8 +178,7 @@
                 
 
 
-          
-
+      
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

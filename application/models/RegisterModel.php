@@ -52,10 +52,10 @@ class RegisterModel extends CI_model
 		//return data mahasiswa that has been searched
 	}
 
-	public function hapusDataUser($email)
+	public function hapusDataUser($id)
 	{
 		//use query builder to delete data based on id 
-		$this->db->where('email', $email);
+		$this->db->where('id', $id);
 		$this->db->delete('tbuser');
 	}
 

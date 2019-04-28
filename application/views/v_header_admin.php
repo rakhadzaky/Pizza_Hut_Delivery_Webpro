@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-sm bg-dark">
         <ul class="navbar nav">
             <li class="nav-item">
-                <a href="<?= base_url() ?>index.php/admin" class="nav-link text-light">Home</a>
+                <a href="<?= base_url() ?>index.php/Home" class="nav-link text-light">Home</a>
             </li>
             <li class="nav-item">
                 <a href="<?= base_url() ?>index.php/admin/list_food" class="nav-link text-light">Foods</a>

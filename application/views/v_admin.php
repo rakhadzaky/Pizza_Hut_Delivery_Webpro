@@ -47,7 +47,7 @@
                         <td class="text-center"><?= $puser['email']; ?></td>
                         <td class="text-center"><?= $puser['password']; ?></td>
                         <td>
-                            <a href="<?= base_url(); ?>admin/hapus/<?= $puser['first_name'] ?>">HAPUS</a>
+                            <a href="<?= base_url(); ?>admin/hapus/<?= $puser['id'] ?>">HAPUS</a>
                         </td>
 
                         

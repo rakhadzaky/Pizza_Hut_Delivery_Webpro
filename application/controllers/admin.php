@@ -28,14 +28,13 @@ public function index()
 		
 	}
 
-public function hapus($email)
+public function hapus($id)
 	{
-		$this->RegisterModel->hapusDataUser($email);
-		$data['user'] = $this->RegisterModel->hapusDataUser($email);
-		$this->session->set_flashdata('flash','delete success'); 
-		redirect('admin');
-
+		$this->RegisterModel->hapusDataUser($id);
+		$this->session->set_flashdata('success','delete success'); 
+		redirect('index.php/admin');
 	}
+	
 
 public function detail($email)
 {

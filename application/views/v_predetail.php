@@ -29,7 +29,7 @@
                     </li><br>
                     <li class="predetail">
                         <button type="button" class="btn btn-danger" style="width: 312px; height: 37px; font-weight: bold;">Lihat History Pemesanan</button>
-                    </li><br>
+                    </li><br><br>
                     <center>
                         <li class="predetail">
                             <i></i> 9 Bulan sampai ulang tahun anda
@@ -153,7 +153,7 @@
                             <div class="col-md-2"></div>
 
                             <!-- PASSWORD -->
-                            <?php $my_date = explode("-",$tbuser['birth']); ?>
+                            
                             <div class="col-md-2"></div>
                             <div class="form-group col-md-2">
                               <label for="inputCity" style="color: white">Tanggal</label>
