@@ -1,22 +1,47 @@
 .bg{ /*background transparan di header dan footer*/
  
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.3);
-  color: #f1f1f1;
+ box-shadow: none;
+ background: #000;
+ background: rgba(0,0,0,.5);
 }
 
 .atas {
  width: 100%;
 }
 
-a:hover { 
+.shared-footer__wrapper {
+    padding: 20px 0;
+    text-align: center;
+    color: #AAA;
+    font-size: 12px;
+    font-size: .85714rem;
+    line-height: 1.66667;
+}
+
+.tulisan:hover { 
   color: #ff3333;
 }
 
-i:hover { 
-  color: #ff3333;
+.tulisan{
+    color: white;
+    padding-bottom: 10px;
 }
 
+hr{
+    width: 10px;
+    border-top: 0.1px solid #999; 
+}
+
+.menu:hover .overlay {
+  opacity: 1;
+}
+
+/*list menu*/
+.promo {
+    background-image: url('https://static.phd.co.id/icons/categoryicons/promo.png');
+    background-size: auto 47px;
+}
+/*ens list menu*/
 body {
 	background-image: url('bg.jpg');
 	background-attachment: fixed;
